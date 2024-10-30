@@ -30,7 +30,7 @@ public class FileReader {
             return null;
         }
 
-        // Check if the file exists
+        // Check the file
         if (!file.exists()) {
             System.out.println("The file '" + fileName + "' does not exists");
             System.out.println("Make sure your file is in inputFiles/ directory of the project");
@@ -58,10 +58,10 @@ public class FileReader {
         int[] letter_counts = new int[52];
         try (FileInputStream fis = new FileInputStream(file)){
             int size = fis.available();
-            // Step 4: Read bytes using a for loop based on the size variable
+
             for (int i = 0; i < size; i++) {
                 char letter = (char) fis.read();
-                //System.out.println(letter);
+
                 if (letter >= 'A' && letter <= 'Z') { // Uppercase letters
                     letter_counts[letter - 'A']++;
                 } else if (letter >= 'a' && letter <= 'z') { // Lowercase letters

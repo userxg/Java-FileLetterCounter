@@ -17,7 +17,7 @@ public class FileWriter {
         }
         // Create the file and write to it
         try (FileOutputStream fos = new FileOutputStream(res_file)) {
-            // Loop from 0 to 51 (total of 52 letters)
+
             for (int i = 0; i < letter_counts.length; i++) {
                 char letter;
                 if (i < 26) {
@@ -30,7 +30,7 @@ public class FileWriter {
                 byte[] myBytes = res.getBytes();
                 fos.write(myBytes);
             }
-             // Write bytes to the file
+
             System.out.println("Successfully wrote results to the file: " + res_file.getName());
         }catch (IOException e){
             System.out.println("Failed to write results into file");
